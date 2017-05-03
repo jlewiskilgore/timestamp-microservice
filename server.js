@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
         '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/July%2022,%201988</code>'+
         '<br>'+
         '<br>'+
-        '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/585570785</code>'+
+        '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/585547200</code>'+
         '<br>'+
         '<br>'+
         '<h3>Sample Output: </h3>'+
@@ -48,6 +48,8 @@ app.get('/:date', function(req, res) {
     }
     else if(new Date(userDate)) {
         naturalDate = userDate;
+        
+        unixDate = new Date(naturalDate).getTime() / 1000;
     }
     
     var result = {"unixTimestamp": unixDate, 
