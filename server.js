@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
         '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/July%2022,%201988</code>'+
         '<br>'+
         '<br>'+
-        '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/585532800</code>'+
+        '<code>https://timestamp-microservice-jlewiskilgore.c9users.io/585570785</code>'+
         '<br>'+
         '<br>'+
         '<h3>Sample Output: </h3>'+
@@ -26,10 +26,25 @@ app.get('/:date', function(req, res) {
     var naturalDate = null;
     var unixDate = null;
     
+    var day;
+    var month;
+    var year;
+    
+    var fullMonth = ["January", "February", "March", "April", "May",
+    "Juny", "July", "August", "September", "October", "November", "December"];
+    
     var userDate = req.params.date;
     
     if(Number(userDate)) {
         unixDate = userDate;
+        naturalDate = new Date(unixDate * 1000);
+        
+        day = naturalDate.getDate();
+        month = naturalDate.getMonth();
+        year = naturalDate.getFullYear();
+        
+        naturalDate = fullMonth[month] + " " + day + ", " + year;
+        
     }
     else if(new Date(userDate)) {
         naturalDate = userDate;
