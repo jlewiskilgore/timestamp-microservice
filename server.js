@@ -34,6 +34,8 @@ app.get('/:date', function(req, res) {
     "Juny", "July", "August", "September", "October", "November", "December"];
     
     var userDate = req.params.date;
+    var dateParam = new Date(userDate);
+    var isValidDate = !isNaN(dateParam.valueOf());
     
     if(Number(userDate)) {
         unixDate = userDate;
@@ -46,7 +48,7 @@ app.get('/:date', function(req, res) {
         naturalDate = fullMonth[month] + " " + day + ", " + year;
         
     }
-    else if(new Date(userDate)) {
+    else if(isValidDate) {
         naturalDate = userDate;
         
         unixDate = new Date(naturalDate).getTime() / 1000;
