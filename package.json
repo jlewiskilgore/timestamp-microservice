@@ -2,10 +2,12 @@
   "name": "timestamp",
   "version": "1.0.0",
   "description": "A timestamp microservice API",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "J Lewis Kilgore",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
