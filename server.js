@@ -60,6 +60,6 @@ app.get('/:date', function(req, res) {
     res.json(result);
 });
 
-app.listen(8080, function() {
+app.listen(process.env.PORT || 8080, function() {
     console.log("Server Listening on Port 8080");
 });
