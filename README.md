@@ -1,7 +1,8 @@
 # FCC Backend API Project - Timestamp Microservice
 
-This is a project using D3.js to create a Map of Meteorites landed that
-is displayed on a world map.
+This is a project to create a microservice API to return
+the natural timestamp and unix timestamp of a given 
+date query parameter.
 
 Requirements:
 
